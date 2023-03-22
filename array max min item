@@ -1,0 +1,20 @@
+#public class SecondLargest {
+
+    public static void main(String[] args) {
+        int[] numbers = { 5, 10, 3, 20, 8 };
+        int max = numbers[0]; // Зберігаємо перший елемент масиву у змінну max
+        int secondMax = numbers[0]; // Зберігаємо перший елемент масиву у змінну secondMax
+
+        // Проходимо по масиву та знаходимо найбільший та другий найбільший елементи
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) { // Якщо поточний елемент більший за максимальний
+                secondMax = max; // Зберігаємо максимальний елемент у змінну secondMax
+                max = numbers[i]; // Зберігаємо поточний елемент у змінну max
+            } else if (numbers[i] > secondMax && numbers[i] != max) { // Якщо поточний елемент більший за secondMax, але не дорівнює максимальному
+                secondMax = numbers[i]; // Зберігаємо поточний елемент у змінну secondMax
+            }
+        }
+
+        System.out.println("Second largest element: " + secondMax); // Виводимо другий найбільший елемент масиву
+    }
+}
